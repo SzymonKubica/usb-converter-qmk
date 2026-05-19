@@ -4,6 +4,9 @@ A QMK keyboard converter allows for using custom keyboard keybindings with any
 keyboard. Plug your keyboard into the converter and it will translate
 the keypresses into custom keycodes according to your keymap.
 
+![Converter with no case](assets/no-enclosure.jpg)
+![Converter case](assets/case.jpg)
+
 ## Why?
 
 If you have a retro / standard office keyboard, it probably doesn't have any keymap
@@ -30,6 +33,13 @@ and it works great so far.
    - Compile your keymap
    - Download firmware for flashing
 4. Flash using the `flash` script provided in this repository.
+   - Immediately before running the flash script please press the reset button on
+     the Leonardo board so that it enters boot mode and becomes visible to your PC
+   - If your board is on a port different from `ttyACM0`, you can override it
+     by invoking the script like so:
+     ```
+     PORT=<your-port-here> flash <your-.hex-file-here>
+     ```
 
 ## Hardware
 
