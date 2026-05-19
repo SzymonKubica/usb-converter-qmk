@@ -4,8 +4,11 @@ A QMK keyboard converter allows for using custom keyboard keybindings with any
 keyboard. Plug your keyboard into the converter and it will translate
 the keypresses into custom keycodes according to your keymap.
 
-![Converter with no case](assets/no-enclosure.jpg)
-![Converter case](assets/case.jpg)
+<p align="center">
+<img src="assets/no-enclosure.jpg" alt="Converter with no case" height="250px"/>
+<img src="assets/case.jpg" alt="Converter case" height="250px"/>
+</p>
+
 
 ## Why?
 
@@ -38,7 +41,7 @@ and it works great so far.
    - If your board is on a port different from `ttyACM0`, you can override it
      by invoking the script like so:
      ```
-     PORT=<your-port-here> flash <your-.hex-file-here>
+     PORT=<your-port-here> ./flash <your-.hex-file-here>
      ```
 
 ## Hardware
