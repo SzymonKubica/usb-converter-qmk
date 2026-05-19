@@ -2,7 +2,7 @@
 
 QMK keyboard converter allows for using custom keyboard keybindings with any
 keyboard. Simply plug the keyboard into the converter and it will translate
-the actual physical keypresses on your keyboard into the custom keycodes sent
+the actual physical keypresses on your keyboard into custom keycodes sent
 by the converter.
 
 ## Why?
@@ -20,5 +20,10 @@ In my case, I need this converter for my (Unicomp Mini M)[https://www.pckeyboard
 ## Getting started
 
 First, you need to clone the `qmk_firmware` repository that allows to compile the
-keybindings.
+keybindings. To do this, you need to:
 
+```
+git submodule update --init --recursive
+```
+
+That will clone the firmware repository.
