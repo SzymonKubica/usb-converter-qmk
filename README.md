@@ -31,6 +31,23 @@ and it works great so far.
    - Download firmware for flashing
 4. Flash using the `flash` script provided in this repository.
 
+## Hardware
+
+You need to get:
+- [Arduino Leonardo] microcontroller board
+- [USB Host Shield]
+
+Most USB Host Sheilds come with their power selector pins unsoldered. You will
+need to connect the correct pins to activate the 5V power as shown in
+[this video](https://youtu.be/UILqxk6Edoo?t=112)
+
+> Note: the video link points you to the exact frame that shows the 3 pairs of
+power selector pads soldered correctly.
+
+If you want a case for the converter, you can 3d print one using these [STL files](case.md).
+
+> Future Plan: I will design a nicer enclosure that fits a bit better.
+
 ## Advanced Setup
 
 > Note: this is only useful if you want to e.g. send mouse movement events with
@@ -48,7 +65,7 @@ That will clone the firmware repository.
 ### Defining the keymap
 
 To define the desired keymap, you will need to use the QMK web UI.
-You need to pick the [converter/usb_usb/leonardo](https://config.qmk.fm/#/converter/usb_usb/leonardo/LAYOUT_all)
+You need to pick the [converter/usb_usb/hasu](https://config.qmk.fm/#/converter/usb_usb/hasu/LAYOUT_all)
 keyboard type.
 
 Once you define the keymap, save it down as json so that it can be
@@ -100,3 +117,10 @@ qmk compile <name of your json keymap file>
 
 This should create the `.hex` file that you can then take and flash onto your target
 microcontroller.
+
+Once the compilation finishes, you should see a line like this:
+```
+Creating load file for flashing: .build/converter_usb_usb_hasu_demo-keymap.hex                      [OK]
+```
+Telling you where the hex file got created. You can take that and flash as
+described in the quickstart section above.
