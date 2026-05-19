@@ -1,3 +1,0 @@
-#!/bin/bash
-qmk compile sculpt_keypad_layout2.json
-
