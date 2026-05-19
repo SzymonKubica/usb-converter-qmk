@@ -1,12 +1,12 @@
 # QMK Keyboard Converter
 
 A QMK keyboard converter allows for using custom keyboard keybindings with any
-keyboard. Plug your keyboard into the converter and it will translate
-the keypresses into custom keycodes according to your keymap.
+keyboard. Plug your keyboard into the converter, it will translate
+the keypresses into custom keys according to your mapping.
 
 <p align="center">
-<img src="assets/no-enclosure.jpg" alt="Converter with no case" height="250px"/>
-<img src="assets/case.jpg" alt="Converter case" height="250px"/>
+<img src="assets/no-enclosure.jpg" alt="Converter with no case" height="400px"/>
+<img src="assets/case.jpg" alt="Converter case" height="400px"/>
 </p>
 
 
