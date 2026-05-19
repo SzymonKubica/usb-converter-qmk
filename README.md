@@ -1,21 +1,20 @@
 # QMK Keyboard Converter
 
-QMK keyboard converter allows for using custom keyboard keybindings with any
-keyboard. Simply plug the keyboard into the converter and it will translate
-the actual physical keypresses on your keyboard into custom keycodes sent
-by the converter.
+A QMK keyboard converter allows for using custom keyboard keybindings with any
+keyboard. Plug your keyboard into the converter and it will translate
+the keypresses into custom keycodes according to your keymap.
 
 ## Why?
 
-If you have a retro / simple keyboard, it probably doesn't have any keymap
+If you have a retro / standard office keyboard, it probably doesn't have any keymap
 remapping software. Of course, you could use some software layer running on
-your OS (e.g. AutoHotKey) to remap the keys. The problem is that this is not
-portable across different machines.
+your OS (e.g. AutoHotKey) to remap the keys. One limitation is that it is not
+portable across different machines. With this converter, you can connect it to
+any PC / keyboard combination and it will have your keybindings.
 
-With the USB converter you can use you custom QMK keybindings on any keyboard
-and machine.
-
-In my case, I need this converter for my [Unicomp Mini M](https://www.pckeyboard.com/page/product/MINI_M)
+I'm using this converter setup for [Unicomp Mini M](https://www.pckeyboard.com/page/product/MINI_M)
+and [Logitech Deluxe 250](https://docs.rs-online.com/fad5/0900766b80df83ee.pdf)
+and it works great so far.
 
 ## Quick Start
 
@@ -24,14 +23,18 @@ In my case, I need this converter for my [Unicomp Mini M](https://www.pckeyboard
 1. You need and Arduino Leonardo with USB Host Shield (refer to [hardware](#hardware) section)
 2. You need `avrdude` installed on your machine.
 
-### Minimal Setup: 0 to flashing sample firmware
+### Minimal Steps
 
-1. Define your custom keymap in the [QMK Configurator](https://config.qmk.fm/#/converter/usb_usb/leonardo/LAYOUT_all)
-2. Compile your keymap (can be done directly in the configurator web UI)
-3. Download firmware for flashing
+1. Define and compile your keymap in the [QMK Configurator](https://config.qmk.fm/#/converter/usb_usb/leonardo/LAYOUT_all)
+   - Define the keycode overrides & layers using the web editor
+   - Compile your keymap
+   - Download firmware for flashing
 4. Flash using the `flash` script provided in this repository.
 
-## Getting started
+## Advanced Setup
+
+> Note: this is only useful if you want to e.g. send mouse movement events with
+  your keyboard or override some advanced capabilities.
 
 First, you need to clone the `qmk_firmware` repository that allows to compile the
 keybindings. To do this, you need to:
@@ -48,14 +51,10 @@ To define the desired keymap, you will need to use the QMK web UI.
 You need to pick the [converter/usb_usb/leonardo](https://config.qmk.fm/#/converter/usb_usb/leonardo/LAYOUT_all)
 keyboard type.
 
-Once you define the keymap, you can save it down as json so that it can be
-restored in the web UI in the future (in case want to tweak it further).
+Once you define the keymap, save it down as json so that it can be
+compiled locally.
 
-You can also use the QMK UI to compile the keymap and get the `.hex` file that
-can be directly flashed onto the Arduino.
-
-
-## Customizing the converter capabilities
+### Customizing the converter capabilities
 
 You can customize the `usb_usb` converter capabilities by modifying the files:
 ```
@@ -91,3 +90,13 @@ for my configuration with the following diff:
  CONSOLE_ENABLE = no         # Console for debug
  COMMAND_ENABLE = no         # Commands for debug and configuration
 ```
+
+### Compiling the firmware
+
+Navigate to the `qmk_firmware` folder and execute
+```
+qmk compile <name of your json keymap file>
+```
+
+This should create the `.hex` file that you can then take and flash onto your target
+microcontroller.
