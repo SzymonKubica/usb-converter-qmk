@@ -44,8 +44,8 @@ and it works great so far.
 ## Hardware
 
 You need to get:
-- [Arduino Leonardo] microcontroller board
-- [USB Host Shield]
+- [Arduino Leonardo](https://docs.arduino.cc/hardware/leonardo/) microcontroller board
+- [USB Host Shield](https://www.hestore.hu/prod_getfile.php?id=16097&srsltid=AfmBOor0TkWShJXKEJ4mAP1ujjW0N1tA_KbjCaucfanpuyd9rBR4LIED)
 
 Most USB Host Sheilds come with their power selector pins unsoldered. You will
 need to connect the correct pins to activate the 5V power as shown in
